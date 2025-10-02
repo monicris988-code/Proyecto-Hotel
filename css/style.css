@@ -332,11 +332,10 @@ button {
 }
 
 .logo a {
-     font-size: 40px;
-     font-weight: bold;
-     text-transform: uppercase;
-     color: #fff;
-     line-height: 40px;
+     width: 100px;      /* tamaño más pequeño del logo */
+     height: auto;      /* mantiene la proporción */
+     display: block;    /* elimina espacios extra debajo de la imagen */
+     margin-left: 20px; /* lo mueve un poco a la izquierda */
 }
 
 
