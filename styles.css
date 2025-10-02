@@ -1,86 +1,242 @@
 /* Estilos generales */
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* Header */
 header {
-  background: #004080;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
-  margin: 0;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
-  margin-top: 10px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: white;
+  color: #4a5568;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #667eea;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* Contenedor */
 .container {
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Tarjetas de habitaciones */
-.card {
+/* Secciones */
+section {
   background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 25px;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
 }
 
 /* Formularios */
 .formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  gap: 20px;
 }
 
-input, select, button {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+label {
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 0.95em;
 }
 
+input,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1em;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+input::placeholder {
+  color: #a0aec0;
+}
+
+/* Botones */
 button {
-  background: #004080;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding: 16px 40px;
   border: none;
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Nunito', sans-serif;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
 button:hover {
-  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
 }
 
+button:active {
+  transform: translateY(0);
+}
+
+/* Grid para campos del formulario */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer */
 footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   text-align: center;
-  padding: 15px;
-  background: #004080;
-  color: white;
-  margin-top: 20px;
+  padding: 25px;
+  color: #4a5568;
+  font-weight: 600;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  section {
+    padding: 30px 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+}
+
+/* Animación de entrada suave */
+body {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

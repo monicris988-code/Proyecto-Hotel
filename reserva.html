@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservas Elemergia</title>
+  <title>Reservas Hotel Elemergia</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- Encabezado -->
@@ -13,8 +15,7 @@
     <h1>Hotel Elemergia</h1>
     <nav>
       <ul>
-
-        <li><a href="#reserva">Reservar</a></li>
+        <li><a href="#reserva">Nueva Reserva</a></li>
         <li><a href="#consultar">Consultar Reserva</a></li>
       </ul>
     </nav>
@@ -22,57 +23,88 @@
 
   <!-- Formulario de Reserva -->
   <section id="reserva" class="container">
-    <h2>Haz tu Reserva</h2>
+    <h2>Complete su Reserva</h2>
     <form action="backend.php" method="POST" class="formulario">
-      <label>Identificación:</label>
-      <input type="text" name="id" placeholder="Identificación">
 
-        <label>Nombre:</label>
-      <input type="text" name="nombre" placeholder="Nombre"required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Número de Documento</label>
+          <input type="text" name="id" placeholder="Ej: 1234567890" required>
+        </div>
 
-      <label>Apellido:</label>
-      <input type="text" name="apellido" required>
+        <div class="form-group">
+          <label>Nombre Completo</label>
+          <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+        </div>
+      </div>
 
-      <label>Email:</label>
-      <input type="email" name="email" required>
-    
-      <label>Teléfono:</label>
-      <input type="text" name="telefono" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Apellidos</label>
+          <input type="text" name="apellido" placeholder="Ingrese sus apellidos" required>
+        </div>
 
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+      </div>
 
-      <label>Habitación:</label>
-      <select name="habitacion" required>
-        <option value="1">Sencilla</option>
-        <option value="2">Doble</option>
-        <option value="3">Suite</option>
-      </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Teléfono de Contacto</label>
+          <input type="tel" name="telefono" placeholder="300 123 4567" required>
+        </div>
 
-      <label>Fecha de Ingreso:</label>
-      <input type="date" name="fecha_ingreso" required>
+        <div class="form-group">
+          <label>Tipo de Habitación</label>
+          <select name="habitacion" required>
+            <option value="">Seleccione una opción</option>
+            <option value="1">Habitación Sencilla</option>
+            <option value="2">Habitación Doble</option>
+            <option value="3">Suite Premium</option>
+          </select>
+        </div>
+      </div>
 
-      <label>Fecha de Salida:</label>
-      <input type="date" name="fecha_salida" required
-      
-        <label>Número de Personas:</label>
-        <input type="number" name="num_personas" min="1" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Fecha de Entrada</label>
+          <input type="date" name="fecha_ingreso" required>
+        </div>
 
-      <button type="submit">Reservar</button>
+        <div class="form-group">
+          <label>Fecha de Salida</label>
+          <input type="date" name="fecha_salida" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Número de Huéspedes</label>
+        <input type="number" name="num_personas" min="1" max="6" placeholder="¿Cuántas personas se hospedarán?"
+          required>
+      </div>
+
+      <button type="submit">Confirmar Reserva</button>
     </form>
-  </section>        
+  </section>
 
   <!-- Consulta de Reserva -->
   <section id="consultar" class="container">
-    <h2>Consulta tu Reserva</h2>
+    <h2>Consulte su Reserva</h2>
     <form action="buscar_reserva.php" method="POST" class="formulario">
-      <label>Documento de Identidad:</label>
-      <input type="text" name="documento" required>
-      <button type="submit">Buscar</button>
+      <div class="form-group">
+        <label>Documento de Identidad</label>
+        <input type="text" name="documento" placeholder="Ingrese su número de documento" required>
+      </div>
+      <button type="submit">Buscar Reserva</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Hotel Paraíso | Todos los derechos reservados</p>
+    <p>© 2025 Hotel Elemergia | Experiencias Inolvidables</p>
   </footer>
 
 </body>
+
 </html>
