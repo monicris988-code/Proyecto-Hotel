@@ -146,7 +146,7 @@ body {
    4. BANNER / HERO
    ======================================================================== */
 .banner_main {
-     background: url(images/banner.png);
+     background: url(/images/banner.png);
      background-repeat: no-repeat;
      min-height: 900px;
      display: flex;
@@ -462,7 +462,7 @@ body {
    ======================================================================== */
 .testimonial {
      margin-top: 80px;
-     background: url(images/tes_bg.jpg);
+     background: url(/images/tes_bg.jpg);
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
