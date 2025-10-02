@@ -73,9 +73,10 @@ body {
 }
 
 .logo a img {
-     width: 120px;
+     width: 200px;
      height: auto;
      transition: transform 0.3s ease;
+     filter: invert(100%) brightness(200%);
 }
 
 .logo a img:hover {
