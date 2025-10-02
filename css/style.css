@@ -70,6 +70,9 @@ body {
      position: absolute;
      z-index: 999;
      transition: all 0.3s ease;
+     display: flex;
+     justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+     align-items: center;            /* alinea verticalmente todo */
 }
 
 .logo a img {
@@ -86,6 +89,9 @@ body {
 .navigation.navbar {
      float: right;
      padding: 0;
+     display: flex;
+     align-items: center; /* centrado vertical */
+     height: 100%;        /* para que tome toda la altura del header */
 }
 
 .navigation.navbar-dark .navbar-nav .nav-link {
@@ -205,6 +211,7 @@ body {
      padding-bottom: 20px;
      display: block;
      animation: fadeInUp 1.2s ease;
+     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 .text-bg p {
