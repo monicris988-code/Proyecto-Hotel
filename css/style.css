@@ -10,6 +10,8 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,400,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:wght@400;600;700&display=swap');
+
 
 @import url(animate.min.css);
 @import url(normalize.css);
@@ -34,7 +36,7 @@ html {
 }
 
 body {
-     font-family: 'Nunito', sans-serif;
+     font-family: 'Lora', serif;
      color: #666;
      font-size: 15px;
      line-height: 1.8;
@@ -215,8 +217,9 @@ body {
 }
 
 .text-bg p {
-     color: #fff;
-     font-size: 18px;
+     color: #f1f1f1;
+     font-size: 20px;
+     font-weight: 400;
      line-height: 32px;
      padding-bottom: 50px;
      max-width: 700px;
@@ -368,7 +371,7 @@ body {
 
 .choose_box p,
 .our_box p {
-     font-size: 17px;
+     font-size: 25px;
      line-height: 32px;
      color: #4a5568;
      padding: 20px 0 40px 0;
@@ -439,7 +442,7 @@ body {
 
 .about .titlepage p {
      color: #cbd5e0;
-     font-size: 18px;
+     font-size: 25px;
      line-height: 32px;
      font-weight: 400;
 }
@@ -513,7 +516,7 @@ body {
 }
 
 .test_box p {
-     font-size: 16px;
+     font-size: 18px;
      line-height: 28px;
      color: #fff;
      margin-top: 15px;
@@ -604,7 +607,7 @@ body {
 
 .cont p {
      color: #cbd5e0;
-     font-size: 17px;
+     font-size: 20px;
      line-height: 30px;
      padding-top: 20px;
 }
@@ -634,3 +637,12 @@ body {
 /* ========================================================================
    10. FIN (archivo reorganizado)
    ======================================================================== */
+/* Tipografía para títulos */
+h1, h2, h3, h4, h5, h6,
+.titlepage h2,
+.text-bg h1,
+.text-bg span,
+.navbar-nav .nav-link,
+.sign_btn a {
+  font-family: 'Raleway', sans-serif;
+}
