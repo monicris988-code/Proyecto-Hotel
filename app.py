@@ -59,6 +59,6 @@ def mostrar_reservas():
     conn.close()
     return render_template("reservas.html", reservas=reservas)
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
 

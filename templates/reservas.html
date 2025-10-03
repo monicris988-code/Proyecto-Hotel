@@ -1,0 +1,51 @@
+Reservas:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas</title>
+       <style>
+            table{
+        border-collapse: collapse;
+        width: 100%;
+        margin:auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    </style>
+    
+    
+    
+</head>
+<body>
+    <h2 style="text-align:center;">Lista de Reservas</h2>
+    <table>
+        <tr>
+            <th>ID Reserva</th>
+            <th>Cliente</th>
+            <th>Habitación</th>
+            <th>Fecha Ingreso</th>
+            <th>Fecha Salida</th>
+            <th>Estado</th>
+        </tr>
+        {% for r in reservas %}
+        <tr>
+            <td>{{ r.id_reserva }}</td>
+            <td>{{ r.nombre }} {{ r.apellido }}</td>
+            <td>{{ r.id_habitacion }}</td>
+            <td>{{ r.fecha_ingreso }}</td>
+            <td>{{ r.fecha_salida }}</td>
+            <td>{{ r.estado }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

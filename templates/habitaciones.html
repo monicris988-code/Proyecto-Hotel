@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Habitaciones</title>
+    <style>
+            table{
+        border-collapse: collapse;
+        width: 100%;
+        margin:auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    </style>
+</head>
+<body>
+    <h2>Lista de Habitaciones</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Número</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Estado</th>
+        </tr>
+        {% for h in habitaciones %}
+        <tr>
+            <td>{{ h.id_habitacion }}</td>
+            <td>{{ h.numero_habitacion }}</td>
+            <td>{{ h.tipo_habitacion }}</td>
+            <td>{{ h.precio }}</td>
+            <td>{{ h.estado }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><a href="/">Volver</a>
+</body>
+</html>
