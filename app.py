@@ -6,26 +6,23 @@ app = Flask(__name__)
 def get_db_connection():
     conn = mysql.connector.connect(
         host="localhost",
-        user="root",          
-        password="",          
+        user="root",          #  tu usuario de MySQL
+        password="",          # tu contraseña (en XAMPP casi siempre está vacía)
         database="hotel_reservas"
     )
     return conn
 
 # 🔹 Ruta principal
 @app.route('/')
-def index():
-    return "<h2>Bienvenido al sistema de reservas del hotel</h2><ul>" \
-           "<li><a href='/habitaciones'>Ver Habitaciones</a></li>" \
-           "<li><a href='/clientes'>Ver Clientes</a></li>" \
-           "<li><a href='/reservas'>Ver Reservas</a></li></ul>"
+def home():
+    return render_template("index.html")
 
 # 🔹 Mostrar habitaciones
 @app.route('/habitaciones')
 def mostrar_habitaciones():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM habitaciones WHERE estado = 'disponible'")
+    cursor.execute("SELECT * FROM habitaciones")
     habitaciones = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -58,6 +55,7 @@ def mostrar_reservas():
     cursor.close()
     conn.close()
     return render_template("reservas.html", reservas=reservas)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

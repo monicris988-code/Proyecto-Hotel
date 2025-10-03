@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="utf-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <title>Hotel El Potrillo</title>
-   <meta name="description" content="Hotel El Potrillo - Experimenta lujo y confort en el corazón del paraíso" />
+   <meta name="keywords" content="hotel, reserva, vacaciones">
+   <meta name="description" content="Página dedicada a reservas de hotel">
+   <meta name="author" content="Tu Nombre">
 
-   <!-- bootstrap css (local si lo tienes en /css) -->
-   <link rel="stylesheet" href="css/bootstrap.min.css" />
-   <!-- tus estilos -->
-   <link rel="stylesheet" href="css/style.css" />
-   <link rel="stylesheet" href="css/responsive.css" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
-   <!-- favicon: uso el logo local -->
-   <link rel="icon" href="images/logo.png" type="image/png" />
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
-   <!-- iconos -->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" />
+   <!-- Favicon -->
+   <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
+
+   <!-- Fancybox -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
 </head>
-
 <body class="main-layout">
    <!-- Cargador -->
    <div class="loader_bg">
-      <div class="loader"><img src="images/loading.gif" alt="Cargando" /></div>
+      <div class="loader">
+         <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Cargando">
+      </div>
    </div>
 
    <!-- Encabezado -->
@@ -37,7 +43,9 @@
                   <div class="full">
                      <div class="center-desk">
                         <div class="logo">
-                           <a href="index.html"><img src="images/logo.png" alt="Hotel El Potrillo" /></a>
+                           <a href="index.html">
+                              <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Hotel El Potrillo">
+                           </a>
                         </div>
                      </div>
                   </div>
@@ -61,7 +69,7 @@
       </div>
    </header>
 
-   <!-- Banner (la imagen de fondo sale del CSS: images/banner.png) -->
+   <!-- Banner -->
    <section class="banner_main">
       <div class="container">
          <div class="row">
@@ -86,18 +94,19 @@
                   <div class="row">
                      <div class="col-md-3">
                         <label class="date">Fecha de entrada</label>
-                        <input class="book_n" type="date" />
+                        <input class="book_n" type="date">
                      </div>
                      <div class="col-md-3">
                         <label class="date">Fecha de salida</label>
-                        <input class="book_n" type="date" />
+                        <input class="book_n" type="date">
                      </div>
                      <div class="col-md-3">
                         <label class="date">Huéspedes</label>
-                        <input class="book_n" placeholder="2" type="number" min="1" />
+                        <input class="book_n" placeholder="2" type="number" min="1">
                      </div>
                      <div class="col-md-3">
-                           <a href="reserva.html" class="book_btn">Reserva</a>
+                           <a href="{{ url_for('mostrar_reservas') }}" class="book_btn">Reserva</a>
+
                      </div>
                   </div>
                </form>
@@ -113,7 +122,7 @@
             <div class="col-md-6">
                <div class="choose_box">
                   <div class="titlepage">
-                     <h2><span class="text_norlam">Descubre</span> <br />Alojamientos Premium</h2>
+                     <h2><span class="text_norlam">Descubre</span> <br>Alojamientos Premium</h2>
                   </div>
                   <p>Habitaciones diseñadas para tu comodidad, con acabados modernos y vistas que invitan al descanso. Tu refugio ideal te espera en Hotel El Potrillo.</p>
                   <a class="read_more" href="#">Explorar habitaciones</a>
@@ -123,17 +132,17 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="img_box">
-                        <figure><img src="images/img1.avif" alt="Suite de lujo" /></figure>
+                        <figure><img src="{{ url_for('static', filename='images/img1.avif') }}" alt="Suite de lujo"></figure>
                      </div>
                   </div>
                   <div class="col-md-6">
                      <div class="img_box">
-                        <figure><img src="images/img2.avif" alt="Habitación Deluxe" /></figure>
+                        <figure><img src="{{ url_for('static', filename='images/img2.avif') }}" alt="Habitación Deluxe"></figure>
                      </div>
                   </div>
                   <div class="col-md-6">
                      <div class="img_box">
-                        <figure><img src="images/img3.avif" alt="Vista al mar" /></figure>
+                        <figure><img src="{{ url_for('static', filename='images/img3.avif') }}" alt="Vista al mar"></figure>
                      </div>
                   </div>
                </div>
@@ -148,13 +157,13 @@
          <div class="row d-flex align-items-center">
             <div class="col-md-6">
                <div class="img_box">
-                  <figure><img src="images/img4.avif" alt="Desayuno gourmet" /></figure>
+                  <figure><img src="{{ url_for('static', filename='images/img4.avif') }}" alt="Desayuno gourmet"></figure>
                </div>
             </div>
             <div class="col-md-6">
                <div class="our_box">
                   <div class="titlepage">
-                     <h2><span class="text_norlam">Saborea</span> <br />Gastronomía excepcional</h2>
+                     <h2><span class="text_norlam">Saborea</span> <br>Gastronomía excepcional</h2>
                   </div>
                   <p>Sabores locales e internacionales preparados con ingredientes frescos. Desde un desayuno completo hasta cenas memorables, cada plato celebra la tradición y la calidad.</p>
                   <a class="read_more" href="#">Ver menú</a>
@@ -178,14 +187,14 @@
             </div>
             <div class="col-md-6">
                <div class="about_img">
-                  <figure><img src="images/about_img.avif" alt="Exterior del hotel" /></figure>
+                  <figure><img src="{{ url_for('static', filename='images/about_img.avif') }}" alt="Exterior del hotel"></figure>
                </div>
             </div>
          </div>
       </div>
    </div>
 
-   <!-- Testimonios (el fondo sale del CSS: images/tes_bg.jpg) -->
+   <!-- Testimonios -->
    <div class="testimonial">
       <div class="container">
          <div class="row">
@@ -218,7 +227,7 @@
                                  <div class="test_box">
                                     <h4>Carlos Ramírez</h4>
                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                    <p>"Un lugar perfecto para desconectarse. Ideal para desconectarse. Tranquilidad total y un servicio excelente."</p>
+                                    <p>"Un lugar perfecto para desconectarse. Tranquilidad total y un servicio excelente."</p>
                                  </div>
                               </div>
                            </div>
@@ -231,7 +240,7 @@
                                  <div class="test_box">
                                     <h4>Ana María Torres</h4>
                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                    <p>"La comida superó mis expectativas, en especial el desayuno típico. Todo fresco y delicioso. Definitivamente volveremos."</p>
+                                    <p>"La comida superó mis expectativas, en especial el desayuno típico. Todo fresco y delicioso."</p>
                                  </div>
                               </div>
                               <div class="col-md-6 mb-4">
@@ -244,7 +253,7 @@
                            </div>
                         </div>
                      </div>
-                      <div class="carousel-item">
+                     <div class="carousel-item">
                         <div class="container">
                            <div class="row">
                               <div class="col-md-6 mb-4">
@@ -289,13 +298,13 @@
                   <form id="request" class="main_form">
                      <div class="row">
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Nombre completo" type="text" name="name" required />
+                           <input class="contactus" placeholder="Nombre completo" type="text" name="name" required>
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Correo electrónico" type="email" name="email" required />
+                           <input class="contactus" placeholder="Correo electrónico" type="email" name="email" required>
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Número de teléfono" type="tel" name="phone" required />
+                           <input class="contactus" placeholder="Número de teléfono" type="tel" name="phone" required>
                         </div>
                         <div class="col-md-12">
                            <textarea class="textarea" placeholder="Tu mensaje" name="message" required></textarea>
@@ -357,3 +366,4 @@
    </script>
 </body>
 </html>
+

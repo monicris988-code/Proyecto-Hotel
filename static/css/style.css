@@ -154,7 +154,7 @@ body {
    4. BANNER / HERO
    ======================================================================== */
 .banner_main {
-     background: url(/images/banner.png);
+     background: url(../images/banner.png);
      background-repeat: no-repeat;
      min-height: 900px;
      display: flex;
@@ -163,6 +163,8 @@ body {
      background-size: cover;
      background-position: center;
      position: relative;
+     background-attachment: fixed;
+
 }
 
 .banner_main::before {
@@ -381,7 +383,13 @@ body {
      margin-bottom: 30px;
      overflow: hidden;
      border-radius: 20px;
-     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25); /* más notorio */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img_box:hover {
+     transform: scale(1.05);
+     box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
 }
 
 .img_box figure {
@@ -453,19 +461,39 @@ body {
      float: right;
 }
 
+/* Contenedor de la imagen */
 .about_img {
-     max-width: 615px;
-     width: 100%;
-     float: left;
+    overflow: hidden;
+    border-radius: 25px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
+/* Imagen dentro */
 .about_img figure {
-     margin: 0;
+    margin: 0;
+    transition: transform 0.5s ease;
 }
 
 .about_img figure img {
-     width: 100%;
+    width: 100%;
+    border-radius: 25px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
+
+/* Hover: se agranda el contenedor */
+.about_img:hover {
+    transform: scale(1.03); /* primer zoom suave */
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+/* Hover: la imagen también se acerca */
+.about_img:hover figure img {
+    transform: scale(1.08); /* segundo zoom acumulado */
+    box-shadow: 0 16px 50px rgba(0,0,0,0.45);
+}
+
+
 
 /* ========================================================================
    8. TESTIMONIAL
@@ -646,3 +674,4 @@ h1, h2, h3, h4, h5, h6,
 .sign_btn a {
   font-family: 'Raleway', sans-serif;
 }
+
