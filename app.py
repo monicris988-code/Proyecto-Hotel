@@ -25,7 +25,7 @@ def index():
 def mostrar_habitaciones():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM habitaciones")
+    cursor.execute("SELECT * FROM habitaciones WHERE estado = 'disponible'")
     habitaciones = cursor.fetchall()
     cursor.close()
     conn.close()
